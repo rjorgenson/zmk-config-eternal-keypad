@@ -1,0 +1,26 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: main
+    - name: zmk-smart-toggle
+      remote: caksoylar
+      revision: main
+  self:
+    path: config
