@@ -1,0 +1,32 @@
+# This file generates the GitHub Actions matrix
+# For simple board + shield combinations, add them
+# to the top level board and shield arrays, for more
+# control, add individual board + shield combinations to
+# the `include` property, e.g:
+#
+# board: [ "nice_nano_v2" ]
+# shield: [ "corne_left", "corne_right" ]
+# include:
+#   - board: bdn9_rev2
+#   - board: nice_nano_v2
+#     shield: reviung41
+#
+---
+include:
+  - board: seeeduino_xiao_ble
+    shield: eternal_keypad_dongle
+    artifact-name: eternal_keypad_dongle_xiao_ble
+
+  - board: nice_nano_v2
+    shield: eternal_keypad
+    artifact-name: eternal_keypad
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+  # setting reset firmware
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+    artifact-name: xiao_ble_reset
+
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: nano_v2_reset
